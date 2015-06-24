@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: SHOUTCLOUD
-Plugin URI:  http://github.com/xmeltrut/ShoutCloudWordPressPlugin
+Plugin URI:  https://wordpress.org/plugins/shoutcloud/
 Description: INTEGRATE SHOULDCLOUD WITH WORDPRESS. EVERYTHING IS BETTER WHEN YOU SHOUT IT.
-Version:     1.0
+Version:     1.1
 Author:      Chris Worfolk
 Author URI:  http://www.worfolk.co.uk/
 License:     GPL2
@@ -11,6 +11,8 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+
+require 'shoutcloud_admin.php';
 
 function shoutcloud_prepare ($str) {
     return strip_tags($str, '<p><br><br /><div><pre><blockquote><em><strong>');
@@ -52,6 +54,8 @@ function shoutcast_string ($str) {
     return $output;
 }
 
-add_filter('the_title', 'shoutcast_string');
-add_filter('the_content', 'shoutcast_string');
-add_filter('the_tags', 'shoutcast_string');
+if (get_option('shoutcloud_enabled')) {
+    add_filter('the_title', 'shoutcast_string');
+    add_filter('the_content', 'shoutcast_string');
+    add_filter('the_tags', 'shoutcast_string');
+}

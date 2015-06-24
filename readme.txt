@@ -28,11 +28,12 @@ DISTADVANTAGES:
 == Installation ==
 
 1. Upload the plugin files to the `/wp-content/plugins/` directory
-2. Enjoy!
+2. Enable via Settings > Reading > SHOUTCLOUD
+3. Enjoy!
 
 == Screenshots ==
 
-1. Blog homepage
+1. Example blog homepage
 
 == Frequently Asked Questions ==
 
@@ -42,6 +43,10 @@ You may be concerned that shouting URLs would break the case-sensitive links. Do
 system that removes all images and hyperlinks so that your audience can concentrate on the text.
 
 == Changelog ==
+
+= 1.1 =
+
+* Feature switch to turn it on/off
 
 = 1.0 =
 
